@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Interactive Video</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+
+	<link href="https://vjs.zencdn.net/7.4.1/video-js.css" rel="stylesheet">
+
+	<!--  <script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script> --> 
+
+	<link rel="stylesheet" type="text/css" href="css/videojs.markers.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/customTheme.css">
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="css/interaction.css">
+
+</head>
+
+<body>
+
+	<div class="container">
+
+		<div class="row videoArea">
+
+			<!-- Video 1 -->
+			<video id="video1" class="vjs-matrix video-js vjs-16-9" data-setup="{}" controls>
+				<source src="videos/Cotopaxi _ Chimborazo med Mountain Adventures.mp4" type="video/mp4">
+				<p class="vjs-no-js">
+					To view this video please enable JavaScript, and consider upgrading to a web browser that
+					<a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+				</p>
+			</video>
+
+			<!-- Menu -->
+			<div class="menu">
+				<h5>:: Videos for Category :: </h5>
+				<ul id='f1teams' class="menuItems jslists">
+					<li>Profesionnal
+						<ul>
+							<li onclick="loadVideo('/videos/Is Germany Good for Web Development _(480P).mp4')">Germany
+								Experience</li>
+							<li onclick="loadVideo('/videos/Job interview.mp4')">Make a interview</li>
+						</ul>
+					</li>				
+				<ul id='f1teams' class="menuItems jslists">
+					<li>Self-improvement
+						<ul>
+							<li onclick="loadVideo('/videos/Is Germany Good for Web Development _(480P).mp4')">Germany
+								Experience</li>
+							<li onclick="loadVideo('/videos/Unterschied Lernen und Reifung.mp4')">How to be mature!</li>							
+						</ul>
+					</li>
+				</ul>
+				<ul id='f1combined' class='jslists'>
+					<li>Travel 
+						<ul>
+							<li>Ecuador
+								<ul>
+									<li onclick="loadVideo('/videos/Ecuador mit Blogger Steve Hänisch _ DW Deutsch(480P).mp4')">Dw</li>
+									<li onclick="loadVideo('/videos/Cotopaxi _ Chimborazo med Mountain Adventures.mp4')">Cotopaxy & Chimborazo Volcano-Mountain</li>
+								</ul>
+							</li>
+							<li>Germany <ul>
+									<li onclick="loadVideo('/videos/TOP 10_ Things To Do In Hamburg(480P).mp4')">Hamburg, things to do!</li>
+									<li onclick="loadVideo('/videos/Neuschwanstein Castle_ Germany in 4K Ultra HD(480P).mp4')">Castles</li>
+								</ul>
+							</li>
+
+						</ul>
+					</li>
+				</ul>
+				<ul id='f1teams' class="menuItems jslists">
+					<li>Music
+						<ul>
+							<li onclick="loadVideo('/videos/Alice In Chains - Again (Official Video)(480P).mp4')">Alice in Chains - Again</li>							
+							<li onclick="loadVideo('/videos/NINA SIMONE - Sinnerman (1965) [Video Clip](480P).mp4')">Nina Simone - Sirene</li>
+						</ul>
+					</li>
+				</ul><br><br>			
+				<p>Copyright 2020 by javo!</p>
+			</div>
+			<!-- Menu Icon -->
+			<img src="media/menu.png" class="menuIcon" onclick="animateMenu()">
+
+		</div>
+
+	</div>
+
+	<!-- Modal 1 -->
+	<div class="modal" id="modal1">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<br>
+					<p id="modalText">Did you know?</p>
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Watch Video</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Bootstrap -->
+	<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+
+	<script src="https://vjs.zencdn.net/7.4.1/video.js"></script>
+	<script src="js/videojs-markers.min.js"></script>
+
+	<!-- Custom JS -->
+	<script src="js/interaction.js"></script>
+	<script src="./js/jsLists.js"></script>
+
+</body>
+<script>
+	// JSLists.createTree("simple_list");
+	JSLists.createTree("f1teams");
+	// JSLists.createTree("f1drivers");
+	// JSLists.createTree("f1combined");
+	$(document).ready(function(){
+		$(".false").on("change",function(){
+console.log("DFStgh")
+		})
+	})
+
+</script>
+
+</html>
