@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exchange Rate Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style2.css" />
+
+    <!-- Section -->
+    <script>
+      window.onload = function () {
+        if (!sessionStorage.user) {
+          window.location.href = '/Homepage.html'
+        } else {
+          load()
+
+        }
+
+      }
+
+
+      function load() {
+        let user = JSON.parse(sessionStorage.user)
+        // console.log(user)
+        document.getElementById('user').innerHTML = user.registerName
+        document.getElementById('name').value = user.registerName
+        document.getElementById('email').value = user.registerEmail
+        document.getElementById('password').value = user.registerPassword
+      }
+
+      function logOut() {
+        event.preventDefault()
+        sessionStorage.clear()
+        window.location.href = '/Homepage.html'
+      }
+
+      function change() {
+        event.preventDefault()
+        JSON.parse(localStorage.getItem('profiles')).forEach((item, index) => {
+
+          if (document.getElementById('email').value === item.registerEmail) {
+            let it = {
+              registerName: document.getElementById('name').value,
+              registerEmail: document.getElementById('email').value,
+              registerPassword: document.getElementById('password').value
+            }
+            // console.log(localStorage.getItem("profiles"))
+            let datas = JSON.parse(localStorage.getItem("profiles"))
+            datas[index] = it
+            localStorage.setItem("profiles", JSON.stringify(datas))
+            // localStorage.getItem(item).registerName = "GGGGGGGGGG"
+            sessionStorage.user = JSON.stringify(it)
+            load()
+            $('#exampleModal').modal('toggle');
+          }
+        })
+      }
+
+    </script>
+
+    <!--End SessionStorge Section -->
+  </head>
+
+  <body>
+    <!-- Main Container -->
+    <div class="container">
+      <h1>Welcom <span id="user"></span> </h1>
+
+      <!-- Logout Button -->
+      <button class="btn btn-danger" onclick="logOut()">Log Out</button>
+
+      <!-- Editing Profile Button -->
+
+      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"
+        data-whatever="@mdo">Edit Profile</button>
+
+      <!-- Some Note -->
+
+      <h2>Exchange Rate Calculator</h2>
+      <p>
+        <li> Choose the currency and the amounts to get the exchange rate </li>
+      </p>
+
+      <!-- Caculater Container -->
+
+      <div class="container">
+
+        <!-- First Currency -->
+        <div class="currency">
+          <select id="currency-one">
+            <option value="AED">AED</option>
+            <option value="ARS">ARS</option>
+            <option value="AUD">AUD</option>
+            <option value="BGN">BGN</option>
+            <option value="BRL">BRL</option>
+            <option value="BSD">BSD</option>
+            <option value="CAD">CAD</option>
+            <option value="CHF">CHF</option>
+            <option value="CLP">CLP</option>
+            <option value="CNY">CNY</option>
+            <option value="COP">COP</option>
+            <option value="CZK">CZK</option>
+            <option value="DKK">DKK</option>
+            <option value="DOP">DOP</option>
+            <option value="EGP">EGP</option>
+            <option value="EUR">EUR</option>
+            <option value="FJD">FJD</option>
+            <option value="GBP">GBP</option>
+            <option value="GTQ">GTQ</option>
+            <option value="HKD">HKD</option>
+            <option value="HRK">HRK</option>
+            <option value="HUF">HUF</option>
+            <option value="IDR">IDR</option>
+            <option value="ILS">ILS</option>
+            <option value="INR">INR</option>
+            <option value="ISK">ISK</option>
+            <option value="JPY">JPY</option>
+            <option value="KRW">KRW</option>
+            <option value="KZT">KZT</option>
+            <option value="MXN">MXN</option>
+            <option value="MYR">MYR</option>
+            <option value="NOK">NOK</option>
+            <option value="NZD">NZD</option>
+            <option value="PAB">PAB</option>
+            <option value="PEN">PEN</option>
+            <option value="PHP">PHP</option>
+            <option value="PKR">PKR</option>
+            <option value="PLN">PLN</option>
+            <option value="PYG">PYG</option>
+            <option value="RON">RON</option>
+            <option value="RUB">RUB</option>
+            <option value="SAR">SAR</option>
+            <option value="SEK">SEK</option>
+            <option value="SGD">SGD</option>
+            <option value="THB">THB</option>
+            <option value="TRY">TRY</option>
+            <option value="TWD">TWD</option>
+            <option value="UAH">UAH</option>
+            <option value="USD" selected>USD</option>
+            <option value="UYU">UYU</option>
+            <option value="VND">VND</option>
+            <option value="ZAR">ZAR</option>
+          </select>
+          <input type="number" id="amount-one" placeholder="0" value="1" />
+        </div>
+        <!--End First Currency -->
+
+        <div class="swap-rate-container">
+          <!-- Swap button -->
+          <button class="btn btn-danger" id="swap">
+            Swap
+          </button>
+          <!-- Result Div -->
+          <div class="rate" id="rate"></div>
+        </div>
+        <!-- Secound Currency -->
+        <div class="currency">
+          <select id="currency-two">
+            <option value="AED">AED</option>
+            <option value="ARS">ARS</option>
+            <option value="AUD">AUD</option>
+            <option value="BGN">BGN</option>
+            <option value="BRL">BRL</option>
+            <option value="BSD">BSD</option>
+            <option value="CAD">CAD</option>
+            <option value="CHF">CHF</option>
+            <option value="CLP">CLP</option>
+            <option value="CNY">CNY</option>
+            <option value="COP">COP</option>
+            <option value="CZK">CZK</option>
+            <option value="DKK">DKK</option>
+            <option value="DOP">DOP</option>
+            <option value="EGP">EGP</option>
+            <option value="EUR" selected>EUR</option>
+            <option value="FJD">FJD</option>
+            <option value="GBP">GBP</option>
+            <option value="GTQ">GTQ</option>
+            <option value="HKD">HKD</option>
+            <option value="HRK">HRK</option>
+            <option value="HUF">HUF</option>
+            <option value="IDR">IDR</option>
+            <option value="ILS">ILS</option>
+            <option value="INR">INR</option>
+            <option value="ISK">ISK</option>
+            <option value="JPY">JPY</option>
+            <option value="KRW">KRW</option>
+            <option value="KZT">KZT</option>
+            <option value="MXN">MXN</option>
+            <option value="MYR">MYR</option>
+            <option value="NOK">NOK</option>
+            <option value="NZD">NZD</option>
+            <option value="PAB">PAB</option>
+            <option value="PEN">PEN</option>
+            <option value="PHP">PHP</option>
+            <option value="PKR">PKR</option>
+            <option value="PLN">PLN</option>
+            <option value="PYG">PYG</option>
+            <option value="RON">RON</option>
+            <option value="RUB">RUB</option>
+            <option value="SAR">SAR</option>
+            <option value="SEK">SEK</option>
+            <option value="SGD">SGD</option>
+            <option value="THB">THB</option>
+            <option value="TRY">TRY</option>
+            <option value="TWD">TWD</option>
+            <option value="UAH">UAH</option>
+            <option value="USD">USD</option>
+            <option value="UYU">UYU</option>
+            <option value="VND">VND</option>
+            <option value="ZAR">ZAR</option>
+          </select>
+          <input type="number" id="amount-two" placeholder="0" />
+          <!--End Secound Currency -->
+        </div>
+      </div>
+    </div>
+
+
+
+    <!--  Modal  user edit start -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Profile</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="name" class="col-form-label">Name :</label>
+                <input type="text" class="form-control" id="name">
+              </div>
+              <div class="form-group">
+                <label for="email" class="col-form-label">E-mail:</label>
+                <input type="email" class="form-control" id="email">
+              </div>
+              <div class="form-group">
+                <label for="password" class="col-form-label">Password:</label>
+                <input type="password" class="form-control" id="password">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button onclick="change()" type="button" class="btn btn-primary">Save Change</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  Modal  user edit End -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+
+    <script src="./js/Currency*.js"></script>
+  </body>
+
+</html>
