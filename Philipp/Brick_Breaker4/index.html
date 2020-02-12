@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Brick Breaker (Breakout)</title>
+</head>
+
+<body>
+
+    <nav id="nav" class="navbar navbar-expand-sm bg-dark navbar-dark shadow-lg">
+        <a class="navbar-brand" href="#">BreakOut.io</a>
+        <ul class="navbar-nav font-weight-bold">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Main Menu</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="graphics" data-toggle="dropdown">
+                    Graphics
+                </a>
+                <div class="dropdown-menu bg-dark  font-weight-bold">
+                    <a class="dropdown-item text-light" href="#">shadows : <span class="text-success">on</span> </a>
+                    <a class="dropdown-item text-light" href="#">Shading : <span class="text-primary">off</span> </a>
+                </div>
+            </li>
+        </ul>
+        <ul id="profile" class="navbar-nav ml-auto font-weight-bold">
+            <li class="nav-item ml-auto"><a class="nav-link">HighScore : 0</a></li>
+            <li class="nav-item dropdown ml-auto">
+                <a class="nav-link dropdown-toggle text-light" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Account Name </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-info bg-dark shadow-lg"
+                    aria-labelledby="navbarDropdownMenuLink-4">
+                    <div class="card mx-2">
+                        <div class="card-head">
+
+                        </div>
+                        <div class="card-body">
+                            <ul>
+                                <li></li>
+                            </ul>
+                            HighScore : 0
+
+                            <button onclick=logoutHandler() class="btn btn-block btn-primary">LogOut</button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Register -->
+    <div id="container" class="col-12 row position-absolute  bg-transparent">
+
+    </div>
+
+    <!-- Login -->
+    <!--  <div id="container" class="col-12 row position-absolute  bg-transparent">
+        <div
+            class="card col-4 pt-5 my-5 mx-auto my-auto  bg-dark text-light rounded border border-secondary shadow-lg ">
+            <div class="card-head text-center border-secondary">
+                <h2>Login</h2>
+            </div>
+            <div class="card-body">
+                <form id="form">
+                    <div>
+                        <div class="form-group">
+                            <label for="accountName">Account Name*</label>
+                            <input id="accountName" class="form-control" type="text" placeholder="Account Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="passWord">Password*</label>
+                            <input id="passWord" class="form-control" type="text" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="py-3" id="output"></div>
+                    <div class="container text-center ">
+                        <button onclick=loginHandler() class="btn btn-primary btn-block text-center"
+                            type="submit">login</button>
+                    </div>
+                </form>
+            </div>
+            <hr class="bg-secondary">
+            <div class="card-footer p-4  text-center ">
+                <div class="card-text">
+                    new Visitor? <a onclick=registerHandler() >Create an Account</a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Start Game -->
+    <!--  <div id="container" class="col-12 row position-absolute  bg-transparent">
+        <div
+            class="card col-4 pt-5 my-5 mx-auto my-auto  bg-dark text-light rounded border border-secondary shadow-lg ">
+            <div class="card-head text-center">
+                <h4>welcome to</h4>
+                <h1>Breakout</h1>
+            </div>
+            <div class="btn-group btn-group-toggle p-4  " data-toggle="buttons">
+                <label class="btn btn-info active">
+                  <input type="radio" name="options" id="option1" autocomplete="off" checked> One Player
+                </label>
+                <label class="btn btn-info">
+                  <input type="radio" name="options" id="option2" autocomplete="off"> two Players
+                </label>
+              </div>
+            <div class="card-body">
+                <button onclick=StartGameHandler() class="btn btn-primary btn-block ">Start Game</button>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Try again -->
+    <!--  <div id="container" class="col-12 row position-absolute  bg-transparent">
+        <div class="card col-4 pt-3  mx-auto my-auto  bg-dark text-light rounded border border-secondary shadow-lg ">
+            <div class="card-head text-center border-secondary">
+                <h2>Try Again ?</h2>
+            </div>
+            <div class="card-body">
+                <div class="py-3" id="output"></div>
+                <div class="container text-center ">
+                    <form onclick=loginHandler(event)>
+                        <button value="yes" class=" m-3   btn btn-lg btn-success   text-center"
+                            type="submit">Yes</button>
+                        <button value="no" class=" m-3 btn btn-lg btn-danger   text-center"
+                            type="submit">No</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- You Won-->
+    <!-- <div id="container" class="col-12 row position-absolute  bg-transparent">
+        <div class="card col-4 pt-3  mx-auto my-auto  bg-dark text-light rounded border border-secondary shadow-lg ">
+            <div class="card-head text-center border-secondary">
+                <h1>Congratulation</h1>
+                <h2>You Won</h2>
+                <br><br><br>
+                <h2>Do you want to try again?</h2>
+            </div>
+            <div class="card-body">
+                <div class="py-3" id="output"></div>
+                <div class="container text-center ">
+                    <form onclick=loginHandler(event)>
+                        <button value="yes" class=" m-3   btn btn-lg btn-success   text-center"
+                            type="submit">Yes</button>
+                        <button value="no" class=" m-3 btn btn-lg btn-danger   text-center" type="submit">No</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div
+    class="card col-sm-6 col-md-5 col-lg-4 py-5  mx-auto my-auto  bg-dark text-light rounded border border-secondary shadow-lg overflow-auto"">
+    <div class="card-head text-center">
+        <h1>Leader Board</h1>
+    </div>
+    <div class="card-body text-center">
+        <ul id="leaderBoardList" class="list-group">
+        </ul>
+    </div>
+</div> -->
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+    <!-- <script src="https://getbootstrap.com/docs/4.4/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script src="./js/easyhttp3.js"></script>
+    <script src="./js/library.js"></script>
+    <script src="./js/main.js"></script>
+
+    <!--pseudo 3d grafic 
+    login account
+    -->
+</body>
+
+</html>
