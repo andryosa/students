@@ -1,0 +1,46 @@
+#youWon{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    height: 60vh;
+    width: 40vw;
+    background-color: white;
+    border: 5px solid tomato;
+    border-radius: 8px;
+    color: tomato;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 2.5rem;
+    animation: 1s modal;
+}
+
+#youWon h3{
+    font-size: 3rem;
+    padding: 2rem;
+    padding-bottom: 1rem;
+}
+
+#youWon p{
+    padding: 0.5rem;
+}
+
+.highscore {
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    background-color: tomato;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px grey;
+}
+
+@keyframes modal {
+    0%{
+        transform: scaleX(0) rotate(10deg);
+
+    }
+
+    100%{
+        transform: scaleX(1) rotate(360deg);
+    }
+}

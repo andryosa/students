@@ -1,0 +1,28 @@
+.audioplayer {
+    background: white;
+    /* white; */
+    /* linear-gradient(0deg, rgba(255,255,255,1) 0%, rgb(177, 176, 176) 49%, rgb(119, 119, 119) 100%); */
+    border-radius: 5px;
+    /* border: 1px solid rgb(207, 207, 207); */
+    box-shadow: 1px 1px 5px rgb(98, 98, 98);
+    display: inline;
+    position: fixed;
+    top: 1vh;
+    right: 1vw;
+    padding: 0.2rem;
+}
+
+.playerButton {
+    color: tomato;
+    /* rgb(199, 199, 199); */
+    font-size: 0.5rem;
+    border-radius: 10px;
+    /* border: 1px solid rgb(207, 207, 207); */
+    padding: 0.5rem;
+    /* border: 1px solid grey; */
+}
+
+.playerButton:active {
+    color: rgb(134, 134, 134);
+    /* box-shadow: 1px 1px 3px rgb(98, 98, 98) inset; */
+}

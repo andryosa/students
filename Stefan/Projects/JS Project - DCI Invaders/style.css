@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Atari Small';
+}
+
+@font-face {
+    font-family: 'Atari Small';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Atari Small'), url('fonts/AtariSmall.woff') format('woff');
+}
+
+.container {
+    background-image: url(IMG/cluster-of-stars-1341279.jpg);
+    background-size: contain;
+    padding: 0 1rem;
+    margin: auto;
+    height: 100vh;
+}
+
+.headline {
+    color: yellow;
+    padding: 0.5rem;
+    font-size: 5rem;
+    text-align: center;
+    text-shadow: 4px 4px 1px black;
+    padding-top: 1.5rem;
+    animation: 1s linear popUp;
+}
+
+#game {
+  display: none;
+    margin: auto;
+    width: 80vw;
+    height: 76vh;
+    position: absolute;
+
+    /* box-shadow: inset 0 0 20px rgba(114, 114, 114, 0.4); */
+}
+
+#hero {
+    background: url(IMG/Invaders/Saf1.png);
+    height: 10vh;
+    position: absolute;
+    top: 70vh;
+    left: 47vw;
+}
+
+
+.invader {
+    height: 8vh;
+    width: 5vw;
+    position: absolute;
+}
+
+#missiles {
+    width: 80vw;
+    height: 76vh;
+    position: absolute;
+
+}
+
+.missile {
+    color: yellow;
+    font-family: 'Atari Small';
+    font-size: 2vh;
+    transform: rotate(-90deg);
+    position: absolute;
+}
+
+.hit {
+    visibility: hidden;
+}
+
+@keyframes popUp {
+    0%{
+        transform: scaleX(0);
+        /* transform: scaleY(0); */
+    }
+    100%{
+        transform: scaleX(1);
+        /* transform: scaleY(1); */
+    }
+}

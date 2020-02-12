@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DCI Invaders</title>
+    <script src="https://kit.fontawesome.com/db4f19f0f3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="musicplayer.css">
+    <link rel="stylesheet" href="pickup.css">
+    <link rel="stylesheet" href="youWon.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- AUDIOPLAYER -->
+        <div class="audioplayer">
+            <a href="#">
+                <i id="play" class="playerButton fas fa-play"></i>
+            </a>
+            
+            <audio id="song" src="Music/Lobo_Loco_-_10_-_Old_Ralley_ID_1200.mp3"></audio>
+            <audio id="song2" src="Music/Strassmeir_Dachaur_Bauernkapelle_-_Werdenfelser_Trompeten_Landler.mp3"></audio>
+        </div>
+
+        <!-- HEADLINE -->
+        <h1 class="headline">DCI Invaders</h1>
+
+        <!-- GAME START -->
+        <div class="containerEnter">
+            <a class="enter">Shall we play?</a>
+
+            <!-- PICK A PLAYER -->
+            <div id="playerPick">
+               <p id="charPick">Pick a Character:</p>
+               <div class="charPickDiv">
+                <a onclick="letsGo(this)" class="pick" id="p1" href=""><img class="player" src="IMG/Invaders/Saf1.png"
+                        alt="">
+                    <p>Saf-1</p>
+                </a>
+
+                <a onclick="letsGo(this)" class="pick" id="p2" href=""><img class="player" src="IMG/Invaders/dci.png"
+                        alt="">
+                    <p> DCI</p>
+                </a>
+
+                <a onclick="letsGo(this)" class="pick" id="p3" href=""><img class="player" src="IMG/Invaders/Ahmad.png"
+                        alt="">
+                    <p> A-Matt</p>
+                </a>
+            </div>
+            </div>
+
+
+            <!-- GAME -->
+            <div id="game">
+                <!-- HERO -->
+                <div id="picked"><img src="IMG/Invaders/Saf1.png" id="hero" alt=""></div>
+                <!-- MISSILE -->
+                <div id="missiles"></div>
+                <!-- INVADERS -->
+                <div id="invaders">
+                </div>
+            </div>
+            <!-- MODAL -->
+                <div id="youWon">
+                    <h3>Congratulations!!</h3>
+                    <p>You provided all the DCI Invaders with Code and made them disappear to the Job Market!
+                    </p>
+                    <p>Become a Legend and click here:</p>
+                    <a class="highscore" href="">Highscore</a>
+                    <form action="" class="userData">
+
+                    </form>
+                </div>
+        </div>
+
+
+    </div>
+
+    <script src="musicplayer.js"></script>
+    <script src="pickup.js"></script>
+    <script src="youWon.js"></script>
+    <script src="game.js"></script>
+</body>
+
+</html>
