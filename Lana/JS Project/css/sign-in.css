@@ -1,0 +1,41 @@
+/* Sign Up  */
+body {
+    background: fixed;
+    background-image: url('../images/sign-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    color: #fff;
+}
+​
+#home-section {
+    background: url('../images/sign-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 700px;
+}
+​
+#home-section .dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 700px;
+    background: rgba(0, 0, 0, 0.7);
+}
+​
+#home-section .home-inner {
+    padding-top: 150px;
+}
+​
+#home-section .card-form {
+    opacity: 0.8;
+}
+
+.signdiv{
+    margin-top: 2vh;
+    /* margin-left: 50vw; */
+    box-shadow: 4px 5px 20px 10px #fffb00;
+    background: transparent;
+}
