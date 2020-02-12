@@ -1,0 +1,154 @@
+*{
+    padding: 0;
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{overflow: hidden;}
+
+.neon{color: #FFFFFF;text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;}
+.neonlite{color: rgb(200,255,250);text-shadow: 0 0 2px rgba(170, 255, 170, 0.678), 0 0 4px rgba(170, 255, 170, 0.644), 0 0 6px rgba(170, 255, 170, 0.651), 0 0 8px #4aff185d, 0 0 10px rgba(74, 255, 24, 0.301), 0 0 13px rgba(74, 255, 24, 0.295), 0 0 18px rgba(74, 255, 24, 0.301), 0 0 22px #4aff1857;}
+
+.main{
+    background-image: linear-gradient(to right bottom, rgb(61, 61, 61), rgb(0, 0, 0));
+width: 100vw;
+height: 100vh;
+z-index: -1;
+/*padding:0px;
+margin:0px;*/
+}
+
+input{
+    background-color: rgba(128, 128, 128, 0.151);
+    padding:.5vw;
+    color: rgba(36, 206, 36, 0.781);
+    border-radius: 5px;
+}
+.gameoverstyle{
+    cursor: pointer;
+    text-align: center;
+    font-size: xx-large;
+    position: absolute;
+    z-index: 30;
+    visibility: hidden;
+    width: 70vw; 
+    height: 70vh;
+    left: 5vw; 
+    top: 10vh;
+    background-color: rgba(0, 0, 0, 0.596);
+color : rgba(99, 250, 79, 0.603);
+
+}
+.brick {
+    color: rgba(255, 255, 255, 0.562);
+    border-top: rgba(200, 200, 200, 0.7) solid 2px;
+    border-left: rgba(200, 200, 200, 0.7) solid 2px;
+    border-bottom: rgb(100, 100, 100, 0.7) solid 2px;
+    border-right: rgb(100, 100, 100, 0.7) solid 2px;
+
+    box-shadow: 2px 10px 15px rgb(61, 61, 61);
+    top: 20vh;
+    position: absolute;
+    width: 4vw;
+    height: 3vh;
+    border-radius: .5rem;
+    z-index: 10;
+}
+
+.padStyle {
+    border-top: rgba(200, 200, 200, 0.7) solid 2px;
+    border-left: rgba(200, 200, 200, 0.7) solid 2px;
+    border-bottom: rgb(100, 100, 100, 0.7) solid 2px;
+    border-right: rgb(100, 100, 100, 0.7) solid 2px;
+
+    background-color: rgb(182, 182, 182);
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgb(20, 20, 20));
+
+    box-shadow: 2px 10px 15px rgb(61, 61, 61);
+    top: 80vh;
+    position: absolute;
+    width: 6vw;
+    height: 3vh;
+    border-radius: 3rem;
+    z-index: 16;
+}
+.daBallStyle {
+    border-top: rgba(200, 200, 200, 0.7) solid 2px;
+    border-left: rgba(200, 200, 200, 0.7) solid 2px;
+    border-bottom: rgb(100, 100, 100, 0.7) solid 2px;
+    border-right: rgb(100, 100, 100, 0.7) solid 2px;
+
+    background-color: rgb(182, 182, 182);
+    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgb(20, 20, 20));
+
+    box-shadow: 2px 10px 15px rgb(61, 61, 61);
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 3rem;
+    z-index: 15;
+    top: 80vh;left:35.7vw
+}
+
+.highscore{
+/*    padding: 0px;
+    margin: 0px;*/
+    font-family:Arial, Helvetica, sans-serif;
+        text-shadow:-0px -1px 0px rgba(71, 71, 71, 0.74), 0px 1px 0px rgba(161, 161, 161, 0.712) ;
+        font-size: 3vw;
+    color: rgb(146, 15, 135);
+    position: absolute; top: 1vh; left: 3vw; 
+    z-index: 5;
+    }
+    .score{
+ /*       padding: 0px;
+        margin: 0px;*/
+        font-size: 3vw;
+
+        font-family:Arial, Helvetica, sans-serif;
+            text-shadow:-0px -1px 0px rgba(71, 71, 71, 0.74), 0px 1px 0px rgba(146, 146, 146, 0.712) ;
+            
+        color: rgb(180, 53, 172);
+        position: absolute; top: 1vh; left: 40vw; 
+        z-index: 6;
+        }
+            
+.red {
+    background-color: red;
+    background-image: linear-gradient(to bottom right, rgb(255, 255, 255, 0.6), rgb(150, 150, 150, 0.6));
+}
+
+.yellow {
+    background-color: rgb(255, 208, 0);
+    background-image: linear-gradient(to bottom right, rgb(255, 255, 255, 0.6), rgb(150, 150, 150, 0.6));
+}
+
+.green {
+    background-color: green;
+    background-image: linear-gradient(to bottom right, rgb(255, 255, 255, 0.6), rgb(150, 150, 150, 0.6));
+
+}
+
+.blue {
+    background-color: blue;
+    background-image: linear-gradient(to bottom right, rgb(255, 255, 255, 0.6), rgb(150, 150, 150, 0.6));
+
+}
+
+.wallStyle {
+    margin-top: 2vh;
+    position: absolute;
+    background-color: rgb(255, 0, 255);
+    left: 10vw;
+    top: 0vh;
+    width: 80vw;
+    height: 90vh;
+    z-index: 1;
+    background-image: linear-gradient(to bottom right, rgba(88, 88, 88, 0.6), rgb(255, 255, 255, 0.6));
+
+    border-bottom: rgba(130,130,130) solid 1vh;
+    border-right: rgba(110,110,110) solid 0.5vw;
+    border-top: rgb(39, 39, 39) solid 1vh;
+    border-left: rgb(59,59,59) solid .5vw;
+    border-radius: .5rem;
+cursor: none;
+}
