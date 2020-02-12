@@ -1,0 +1,67 @@
+Projects
+
+- breakout
+
+https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript
+
+pad shoots more angled when the ball hits the edges
+special pills give three balls, slow motion, smaler pad, bigger pad,
+timed shooter ability
+different gametypes - normal game, eternal game fills up lines from above
+editor creates innerHTML that can be copy pasted into levelfile (tough because of UI)
+
+min
+registration at local storage 3d effects
+
+
+
+speech text reader
+http://espeak.sourceforge.net/
+
+Currency Exchange
+Meal finder
+Seat Selector
+Memory Card
+Weather Forecast
+10 Richest People
+Drag/Drop List
+Text / Reader
+Expense Tracker
+My Blog
+Hangman Game
+Music / Video Player
+Voice Recognition
+Relaxer
+Speed typer game
+Breakout Game / the ball game
+
+*************************************************
+
+- gather requirements
+    customer information, user information, 
+
+-   analysis
+
+-   UI building
+
+-   implementation
+
+-   future steps
+
+
+
+
+
+
+
+
+
+milestones
+day 1
+-   algorythm
+
+day 2
+-   UI
+
+day 4
+-   working structure
